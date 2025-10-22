@@ -1,11 +1,12 @@
 import Navbar from "./_components/Navbar";
+import Survey from "./_components/Survey";
 
 const Home = () => {
   return (
     <>
       <div className="overflow-hidden">
         <Navbar />
-        <div className="relative flex min-h-screen items-center justify-center py-60">
+        <div className="relative flex min-h-screen items-center justify-center py-80">
           <div className="bg-secondary absolute inset-2 bottom-2 rounded-4xl"></div>
           <div className="z-50 -mt-36 flex flex-col items-center justify-center text-center">
             <span className="bg-primary/5 text-text/90 flex items-center justify-center gap-1.5 rounded-full px-4 py-1 text-sm sm:text-base">
@@ -19,6 +20,9 @@ const Home = () => {
               Analyze trivia questions with interactive charts. Explore
               distribution by category and difficulty.
             </p>
+            <div className="mt-12">
+              <Survey />
+            </div>
           </div>
         </div>
       </div>
