@@ -6,7 +6,7 @@ type CategoryFilterProps = {
   uniqueCategories: string[];
   selectedCategory: string;
   setSelectedCategory: (category: string) => void;
-  questions: QuestionsResponse;
+  questions: QuestionsResponse | null;
 };
 
 const CategoryFilter = ({
@@ -31,7 +31,7 @@ const CategoryFilter = ({
             : "text-text bg-gray-200 hover:bg-gray-300",
         )}
       >
-        All Categories ({questions.results.length})
+        All Categories ({questions?.results.length || 0})
       </button>
 
       {uniqueCategories.map((category) => (
@@ -48,7 +48,10 @@ const CategoryFilter = ({
           {decodeHtml(category).length > 30
             ? decodeHtml(category).substring(0, 30) + "..."
             : decodeHtml(category)}{" "}
-          ({questions.results.filter((q) => q.category === category).length})
+          (
+          {questions?.results.filter((q) => q.category === category).length ||
+            0}
+          )
         </button>
       ))}
     </div>
