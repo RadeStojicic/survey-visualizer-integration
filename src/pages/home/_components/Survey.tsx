@@ -1,8 +1,9 @@
 import type { CategoriesResponse, QuestionsResponse } from "@/lib/types";
 import { useEffect, useMemo, useState } from "react";
+import CategoryChart from "./survey/CategoryChart";
 import CategoryFilter from "./survey/CategoryFilter";
+import DifficultyChart from "./survey/DifficultyChart";
 import Header from "./survey/Header";
-import QuestionsList from "./survey/QuestionsList";
 import Spinner from "./survey/Spinner";
 
 const Survey = () => {
@@ -61,9 +62,13 @@ const Survey = () => {
     }
   };
 
-  const clearCacheAndRefresh = () => {
+  const clearCacheAndRefresh = async () => {
     localStorage.removeItem("quizData");
-    fetchData();
+    setLoading(true);
+
+    setTimeout(() => {
+      fetchData();
+    }, 5000);
   };
 
   const filteredQuestions = useMemo(
@@ -91,7 +96,7 @@ const Survey = () => {
             <div className="text-center text-red-500">{error}</div>
           ) : questions && categories ? (
             <div className="container mx-auto text-left">
-              <div className="mb-4 bg-white p-8">
+              <div className="mb-4 bg-white/50 p-8">
                 <Header onRefresh={clearCacheAndRefresh} />
                 <CategoryFilter
                   uniqueCategories={uniqueCategories}
@@ -99,12 +104,8 @@ const Survey = () => {
                   setSelectedCategory={setSelectedCategory}
                   questions={questions}
                 />
-                {filteredQuestions.length > 0 && (
-                  <QuestionsList
-                    questions={filteredQuestions}
-                    maxDisplay={10}
-                  />
-                )}
+                <CategoryChart questions={filteredQuestions} />
+                <DifficultyChart questions={filteredQuestions} />
               </div>
             </div>
           ) : (

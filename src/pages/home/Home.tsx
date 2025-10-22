@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <div className="overflow-hidden">
         <Navbar />
-        <div className="relative flex min-h-screen items-center justify-center py-80">
+        <div className="relative flex min-h-screen items-center justify-center pt-80 pb-14">
           <div className="bg-secondary absolute inset-2 bottom-2 rounded-4xl"></div>
           <div className="z-50 -mt-36 flex flex-col items-center justify-center text-center">
             <span className="bg-primary/5 text-text/90 flex items-center justify-center gap-1.5 rounded-full px-4 py-1 text-sm sm:text-base">
