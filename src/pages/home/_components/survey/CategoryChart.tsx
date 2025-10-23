@@ -36,13 +36,16 @@ const CategoryChart = ({ questions }: CategoryChartProps) => {
 
   return (
     <div className="border-secondary bg-secondary/30 mb-6 border p-4">
-      <header className="mb-4 flex items-center gap-2">
-        <h2 className="text-text flex items-center gap-2 text-xl font-semibold">
-          <span className="bg-primary flex h-6 w-6 items-center justify-center rounded-full text-base text-white">
+      <header className="mb-4">
+        <div className="flex items-center gap-2">
+          {" "}
+          <span className="bg-primary flex h-6 w-6 items-center justify-center rounded-full p-3 text-base text-white">
             1
           </span>
-          Distribution of questions by category
-        </h2>
+          <h2 className="text-text flex items-center gap-2 text-xl leading-6 font-semibold">
+            Distribution of questions by category
+          </h2>
+        </div>
       </header>
       <ResponsiveContainer width="100%" height={600}>
         <BarChart

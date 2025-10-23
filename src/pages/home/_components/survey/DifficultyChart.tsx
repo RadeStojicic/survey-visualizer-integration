@@ -26,10 +26,11 @@ const DifficultyChart = ({ questions }: DifficultyChartProps) => {
   return (
     <div className="border-secondary bg-secondary/30 mb-6 rounded-lg border p-4">
       <div className="mb-4 flex items-center gap-2">
-        <h2 className="text-text flex items-center gap-2 text-xl font-semibold">
-          <span className="bg-primary flex h-6 w-6 items-center justify-center rounded-full text-base text-white">
-            2
-          </span>{" "}
+        {" "}
+        <span className="bg-primary flex h-6 w-6 items-center justify-center rounded-full p-3 text-base text-white">
+          2
+        </span>
+        <h2 className="text-text flex items-center gap-2 text-xl leading-6 font-semibold">
           Distribution of questions by difficulty
         </h2>
       </div>

@@ -6,7 +6,7 @@ type HeaderProps = {
 };
 
 const Header = ({ onRefresh, timedOut }: HeaderProps) => (
-  <div className="mb-6 flex items-center gap-4 sm:justify-end">
+  <div className="mb-6 flex items-center gap-4 px-4 sm:justify-end sm:px-0">
     <button
       disabled={timedOut}
       onClick={onRefresh}

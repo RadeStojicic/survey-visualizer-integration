@@ -51,7 +51,7 @@ const Survey = () => {
         <div className="text-center text-red-500">{error}</div>
       ) : categories ? (
         <div className="container mx-auto text-left">
-          <div className="mb-4 w-full bg-white/50 p-8">
+          <div className="bg-secondary mb-4 w-full sm:bg-white/50 sm:p-8">
             <Header onRefresh={clearCacheAndRefresh} timedOut={isTimedOut} />
             {!loading || categories ? (
               <CategoryFilter
